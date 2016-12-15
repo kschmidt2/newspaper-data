@@ -1,0 +1,148 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Charting the decline of newspapers</title>
+
+    <!-- css -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,400,500,700,900">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/main.css">
+
+
+    <!-- jquery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+    <!-- d3 -->
+    <script src="js/d3.min.js"></script>
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+
+
+</head>
+<body>
+
+    <header class="row">
+      <div class="row">
+        <div class="hidden-xs col-sm-3"></div>
+        <div class="col-sm-6">
+          <img src="header_image1.jpg" class="img-responsive">
+        </div>
+        <div class="hidden-xs col-sm-3"></div>
+      </div>
+      <div class="row">
+        <div class="hidden-xs col-sm-2"></div>
+        <div class="col-xs-12 col-sm-8 headline">
+          <h1>The disappearing newspaper: where it hits hardest</h1>
+        </div>
+      </div>
+    </header>
+
+    <div class="container">
+
+      <section class="intro two-columns row">
+        <div class="col-xs-12 col-sm-10">
+          <p>This is where the intro information goes. This is where the intro information goes. This is where the intro information goes. This is where the intro information goes. This is where the intro information goes. This is where the intro information goes.</p>
+          <p>This is where the intro information goes. This is where the intro information goes. This is where the intro information goes. This is where the intro information goes. </p>
+          <p>This is where the intro information goes. This is where the intro information goes. This is where the intro information goes. This is where the intro information goes. This is where the intro information goes. This is where the intro information goes. This is where the intro information goes. This is where the intro information goes.</p>
+        </div>
+        <div class="hidden-xs col-sm-2 big-numbers">
+          <p class="year">2004</p>
+          <p class="big-number">8,591</p>
+          <p class="label"># of newspapers</p>
+          <p class="big-number">11.7M</p>
+          <p class="label">total circulation</p>
+          <p class="year second-year">2014</p>
+          <p class="big-number">7,927</p>
+          <p class="label"># of newspapers</p>
+          <p class="big-number">9.3M</p>
+          <p class="label">total circulation</p>
+        </div>
+      </section>
+
+
+
+      <section class="data-section row" id="general-bar">
+        <div class="section-headline col-xs-12">
+          <h2>The big picture</h2>
+        </div>
+        <div class="col-xs-12 col-sm-8 chart-div">
+          <h3>Total number of papers</h3>
+          <p class="description">This is where the chart description goes.</p>
+          <div class="buttons">
+            <button id="big-picture-total">Total number</button>
+            <button id="big-picture-circ">Circulation</button>
+            <button id="big-picture-ownership">Ownership</button>
+          </div>
+          <div id="general-chart"></div>
+        </div>
+        <div class="col-xs-12 col-sm-4 sidebar">
+          <div class="legend">
+            <i class="fa fa-circle major-2004"></i> Major metro area (pop. over 1M), 2004<br/>
+            <i class="fa fa-circle major-2014"></i> Major metro area (pop. over 1M), 2014<br/>
+						<i class="fa fa-circle minor-2004"></i> Minor metro area (pop. under 1M), 2004<br/>
+            <i class="fa fa-circle minor-2014"></i> Minor metro area (pop. under 1M), 2014<br/>
+						<i class="fa fa-circle rural-2004"></i> Rural area, 2004<br/>
+            <i class="fa fa-circle rural-2014"></i> Rural area, 2014<br/>
+          </div>
+          <div class="hover-box">
+            This is where hover info will go.
+          </div>
+        </div>
+      </section>
+
+      <section class="data-section row" id="circ-bar">
+        <div class="section-headline col-xs-12">
+          <h2>Circulation</h2>
+        </div>
+        <div class="col-xs-12 col-sm-8 chart-div">
+          <h3>Percent closed by total circulation</h3>
+          <p class="description">This is where the chart description goes.</p>
+          <div id="circ-chart"></div>
+        </div>
+        <div class="col-xs-12 col-sm-4 sidebar">
+          <div class="legend">
+            <i class="fa fa-circle major-2004"></i> Major metro area (pop. over 1M)<br/>
+						<i class="fa fa-circle minor-2004"></i> Minor metro area (pop. under 1M)<br/>
+						<i class="fa fa-circle rural-2004"></i> Rural area<br/>
+          </div>
+          <div class="hover-box">
+            This is where hover info will go.
+          </div>
+        </div>
+      </section>
+
+      <section class="data-section row" id="poverty-bar">
+        <div class="section-headline col-xs-12">
+          <h2>Poverty</h2>
+        </div>
+        <div class="col-xs-12 col-sm-8 chart-div">
+          <h3>Percent closed by county poverty level</h3>
+          <p class="description">This is where the chart description goes.</p>
+          <div class="buttons">
+            <button id="poverty-total">Total number</button>
+            <button id="poverty-circ">Circulation</button>
+          </div>
+          <div id="poverty-chart"></div>
+        </div>
+        <div class="col-xs-12 col-sm-4 sidebar">
+          <div class="legend">
+            <i class="fa fa-circle major-2004"></i> Major metro area (pop. over 1M)<br/>
+						<i class="fa fa-circle minor-2004"></i> Minor metro area (pop. under 1M)<br/>
+						<i class="fa fa-circle rural-2004"></i> Rural area<br/>
+          </div>
+          <div class="hover-box">
+            This is where hover info will go.
+          </div>
+        </div>
+      </section>
+
+
+
+    </div>
+
+    <script src="js/main.js"></script>
+  </body>
+</html>
