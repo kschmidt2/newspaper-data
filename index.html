@@ -24,7 +24,7 @@
 </head>
 <body>
 
-    <header class="row">
+    <header>
       <div class="row">
         <div class="hidden-xs col-sm-3"></div>
         <div class="col-sm-6">
@@ -69,14 +69,16 @@
           <h2>The big picture</h2>
         </div>
         <div class="col-xs-12 col-sm-8 chart-div">
-          <h3>Total number of papers</h3>
-          <p class="description">This is where the chart description goes.</p>
+          <h3 id="general-chart-head">Total number of papers</h3>
+          <p class="description" id="general-description">1,591 newspapers closed between 2004 and 2014, in all areas of the country. While rural papers don't dominate in influence, they rule in numbers. Many of the rural papers in the United States are weeklies with small circulation. The uptick in minor metro newspapers is likely due to demographic shifts rather than an increase in number of papers.</p>
           <div class="buttons">
-            <button id="big-picture-total">Total number</button>
+            <button id="big-picture-total" class="active">Total number</button>
             <button id="big-picture-circ">Circulation</button>
             <button id="big-picture-ownership">Ownership</button>
           </div>
-          <div id="general-chart"></div>
+          <div id="general-chart-div">
+            <div id="general-chart"></div>
+          </div>
         </div>
         <div class="col-xs-12 col-sm-4 sidebar">
           <div class="legend">
@@ -87,9 +89,7 @@
 						<i class="fa fa-circle rural-2004"></i> Rural area, 2004<br/>
             <i class="fa fa-circle rural-2014"></i> Rural area, 2014<br/>
           </div>
-          <div class="hover-box">
-            This is where hover info will go.
-          </div>
+          <div class="hover-box" id="general-hover"></div>
         </div>
       </section>
 
@@ -99,7 +99,7 @@
         </div>
         <div class="col-xs-12 col-sm-8 chart-div">
           <h3>Percent closed by total circulation</h3>
-          <p class="description">This is where the chart description goes.</p>
+          <p class="description">Mid-sized papers have been the hardest hit by the decline of the news industry.</p>
           <div id="circ-chart"></div>
         </div>
         <div class="col-xs-12 col-sm-4 sidebar">
@@ -108,9 +108,7 @@
 						<i class="fa fa-circle minor-2004"></i> Minor metro area (pop. under 1M)<br/>
 						<i class="fa fa-circle rural-2004"></i> Rural area<br/>
           </div>
-          <div class="hover-box">
-            This is where hover info will go.
-          </div>
+          <div class="hover-box" id="circ-hover"></div>
         </div>
       </section>
 
@@ -119,25 +117,30 @@
           <h2>Poverty</h2>
         </div>
         <div class="col-xs-12 col-sm-8 chart-div">
-          <h3>Percent closed by county poverty level</h3>
+          <h3 id="poverty-chart-head">Percent closed by county poverty level</h3>
           <p class="description">This is where the chart description goes.</p>
           <div class="buttons">
-            <button id="poverty-total">Total number</button>
+            <button id="poverty-total" class="active">Total number</button>
             <button id="poverty-circ">Circulation</button>
           </div>
-          <div id="poverty-chart"></div>
+          <div id="poverty-chart-div">
+            <div id="poverty-chart"></div>
+          </div>
         </div>
         <div class="col-xs-12 col-sm-4 sidebar">
-          <div class="legend">
+          <div class="legend" id="poverty-legend">
             <i class="fa fa-circle major-2004"></i> Major metro area (pop. over 1M)<br/>
 						<i class="fa fa-circle minor-2004"></i> Minor metro area (pop. under 1M)<br/>
 						<i class="fa fa-circle rural-2004"></i> Rural area<br/>
           </div>
-          <div class="hover-box">
-            This is where hover info will go.
-          </div>
+          <div class="hover-box" id="poverty-hover"></div>
         </div>
       </section>
+
+      <footer>
+        <p>Data from <a href="http://newspaperownership.com/">The Rise of a New Media Baron and the Emerging Threat of News Deserts</a>, a study produced by the Center for Innovation and Sustainability in Local Media in the School of Media and Journalism at the University of North Carolina at Chapel Hill.</p>
+        <p>Project by Kiersten Schmidt for MEJO460 Data-Driven Reporting at the University of North Carolina at Chapel Hill.</p>
+      </footer>
 
 
 
