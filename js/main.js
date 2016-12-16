@@ -77,7 +77,10 @@ function generalChart(divSelector, dataFile, groupType, detailsParam) {
               .on('mouseleave', hoverOut);
 
           if (dataFile == 'data/region_count.csv') {
-            category.on('mouseover', generalDetails1)
+            category.on('mouseover', function(d){
+              d3.select(this).attr("opacity", 0.85);
+              generalDetails1(d);
+            })
           }
           if (dataFile == 'data/region_circ.csv') {
             category.on('mouseover', generalDetails2)
@@ -109,6 +112,7 @@ function generalChart(divSelector, dataFile, groupType, detailsParam) {
             $('#general-hover').html('');
             $('#circ-hover').html('');
             $('#poverty-hover').html('');
+            d3.select(this).attr("opacity", 1);
           }
 
 
@@ -223,6 +227,7 @@ $('#poverty-total').on('click', function(){
   generalChart('#poverty-chart', 'data/poverty_count.csv', 'poverty_group', 'povertyDetails1')
   $('#poverty-legend').html('<i class="fa fa-circle major-2004"></i> Major metro area (pop. over 1M)<br/><i class="fa fa-circle minor-2004"></i> Minor metro area (pop. under 1M)<br/><i class="fa fa-circle rural-2004"></i> Rural area<br/>')
   $('#poverty-chart-head').html('Percent closed by county poverty level')
+  $('#poverty-description').html("There were only 36 newspapers in counties with under 10% of the population in poverty in 2004, but just two of them have closed. At the same time, newspapers in poor, rural areas have been some of the least likely to shut down. The data indictates the poverty level has not been a strong indicator of whether a newspaper will survive.")
 });
 $('#poverty-circ').on('click', function(){
   $('#poverty-total').removeClass('active')
@@ -232,4 +237,5 @@ $('#poverty-circ').on('click', function(){
   generalChart('#poverty-chart', 'data/poverty_circ.csv', 'poverty_group', 'povertyDetails2')
   $('#poverty-legend').html('<i class="fa fa-circle major-2004"></i> Major metro area (pop. over 1M), 2004<br/><i class="fa fa-circle major-2014"></i> Major metro area (pop. over 1M), 2014<br/><i class="fa fa-circle minor-2004"></i> Minor metro area (pop. under 1M), 2004<br/><i class="fa fa-circle minor-2014"></i> Minor metro area (pop. under 1M), 2014<br/><i class="fa fa-circle rural-2004"></i> Rural area, 2004<br/><i class="fa fa-circle rural-2014"></i> Rural area, 2014<br/>')
   $('#poverty-chart-head').html('Circulation by county poverty level')
+  $('#poverty-description').html("Once again, we see significant decline in newspaper readership across all areas. Newspapers in poorer counties have seen a sharper decline in readership. The increase in readership in the 10-20% poverty range is likely due to shifts in demographics rather than an increased interest in reading the newspaper.")
 });

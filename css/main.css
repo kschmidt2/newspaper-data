@@ -212,3 +212,16 @@ footer p {
   vertical-align: top;
   overflow: hidden;
 }
+
+@media (max-width: 590px) {
+  h1 {
+    font-size: 5rem;
+  }
+  h2 {
+    font-size: 4rem;
+  }
+
+  .container {
+    padding: 0 10%;
+  }
+}
